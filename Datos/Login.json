@@ -1,0 +1,28 @@
+{
+    "users":[
+        {
+            "user":"tomsmith",
+            "password":"SuperSecretPassword!"
+
+        },
+        {
+            "user":"",
+            "password":""
+
+        },
+        {
+            "user":"pablo",
+            "password":"SuperSecretPassword!"
+
+
+        },
+        {
+            "user":"tomsmith",
+            "password":"Charrua30"
+
+
+        }
+
+
+    ]
+}
