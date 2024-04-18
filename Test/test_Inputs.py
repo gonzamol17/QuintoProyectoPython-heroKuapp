@@ -6,7 +6,6 @@ import os
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
 import json
 from colorama import Fore, Back, Style
-import HtmlTestRunner
 from Utils import utils as utils
 
 from Utils.BaseClass import BaseClass
@@ -15,7 +14,6 @@ from POM.InputsPage import InputsPage
 from selenium.webdriver import ActionChains
 
 
-@pytest.mark.usefixtures("test_setup")
 class TestInputs(BaseClass):
 
     def test_Inputs(self):

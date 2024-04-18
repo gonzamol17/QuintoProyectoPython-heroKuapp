@@ -21,6 +21,7 @@ class ContextMenuPage:
         chains = ActionChains(self.driver)
         area = self.driver.find_element(*ContextMenuPageLocators.boxArea)
         chains.context_click(area).perform()
-        time.sleep(1)
+        time.sleep(3)
         self.driver.switch_to_alert().accept()
+        time.sleep(1)
 

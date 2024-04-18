@@ -10,6 +10,7 @@ class EntryAdPageLocators:
     clickHereHyperlink = (By.CSS_SELECTOR, "#content p:nth-of-type(3)>a")
     closeBtnModal = (By.CSS_SELECTOR, "#modal div.modal-footer>p")
     textOfModal = (By.CSS_SELECTOR, "#modal div.modal-body>p")
+    titleOfModal = (By.CSS_SELECTOR, "#modal div.modal-title > h3")
 
 class EntryAdPage:
 
@@ -19,8 +20,11 @@ class EntryAdPage:
     def clickCloseModal(self):
         self.driver.find_element(*EntryAdPageLocators.closeBtnModal).click()
 
-    def returnTitleOfModal(self):
+    def returnTextOfModal(self):
         return self.driver.find_element(*EntryAdPageLocators.textOfModal).text
+
+    def returnTitleOfModal(self):
+        return self.driver.find_element(*EntryAdPageLocators.titleOfModal).text
 
     def clickClickHere(self):
         self.driver.find_element(*EntryAdPageLocators.clickHereHyperlink).click()

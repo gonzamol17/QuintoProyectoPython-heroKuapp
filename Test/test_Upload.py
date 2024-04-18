@@ -6,7 +6,6 @@ import os
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
 import json
 from colorama import Fore, Back, Style
-import HtmlTestRunner
 from Utils import utils as utils
 
 from Utils.BaseClass import BaseClass
@@ -14,7 +13,7 @@ from POM.HomePage import HomePage
 from POM.UploadPage import UploadPage
 from selenium.webdriver import ActionChains
 
-@pytest.mark.usefixtures("test_setup")
+
 class TestFileUpload(BaseClass):
 
     def test_File_Upload(self):
@@ -25,7 +24,7 @@ class TestFileUpload(BaseClass):
         up = UploadPage(driver)
         #up.openOptionToSelectFileBtn()
         time.sleep(2)
-        aux = "C:\\Users\\admin\\Downloads\\asc.jpg"
+        aux = "C:\\Users\\User\\Downloads\\asc.jpg"
         up.selectFile(aux)
         time.sleep(2)
         up.uploadFile()

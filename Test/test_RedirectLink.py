@@ -6,7 +6,6 @@ import os
 sys.path.append(os.path.join(os.path.dirname(__file__),"..",".."))
 import json
 from colorama import Fore, Back, Style
-import HtmlTestRunner
 from Utils import utils as utils
 
 from Utils.BaseClass import BaseClass
@@ -15,7 +14,6 @@ from POM.RedirectLink import RedirectLink
 from selenium.webdriver import ActionChains
 
 
-@pytest.mark.usefixtures("test_setup")
 class TestRedirectLink(BaseClass):
 
     def test_RedirectLink(self):

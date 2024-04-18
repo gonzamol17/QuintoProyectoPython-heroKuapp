@@ -1,9 +1,11 @@
 import time
 
+from selenium.common import UnexpectedAlertPresentException, TimeoutException
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.select import Select
+from selenium.webdriver.support.wait import WebDriverWait
 
 
 class JavaScriptAlertsPageLocators:
@@ -19,10 +21,11 @@ class JavaScriptAlertsPage:
         self.driver = driver
 
     def selectJsAlertBtn(self):
-        self.driver.find_element(*JavaScriptAlertsPageLocators.jsAlertBtn).click()
+        aux = self.driver.find_element(*JavaScriptAlertsPageLocators.jsAlertBtn).click()
         time.sleep(2)
-        self.driver.switch_to_alert().accept()
+        self.driver.switch_to.alert().accept()
 
+            print("Timeout and No Alert Appearing")
     def selectJsConfirmBtn(self):
         self.driver.find_element(*JavaScriptAlertsPageLocators.jsConfirmBtn).click()
         time.sleep(2)

@@ -6,15 +6,12 @@ from colorama import Fore, Back, Style
 from Utils.BaseClass import BaseClass
 from POM.HomePage import HomePage
 from POM.LoginPage import LoginPage
-import HtmlTestRunner
 from Utils import utils as utils
 import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", ".."))
 
 
-
-@pytest.mark.usefixtures("test_setup")
 class TestLoginWithJsonFile(BaseClass):
 
      def test_LoginWithJsonFile(self):
@@ -23,7 +20,7 @@ class TestLoginWithJsonFile(BaseClass):
         hp = HomePage(driver)
         hp.formAutenticationLink()
         lp = LoginPage(driver)
-        file = open("C:\\Users\\admin\\PycharmProjects\\heroKuapp\\Datos\\Login.json", "r")
+        file = open("..\\Datos\\Login.json", "r")
         jsondata = file.read()
         obj = json.loads(jsondata)
         list = obj['users']
