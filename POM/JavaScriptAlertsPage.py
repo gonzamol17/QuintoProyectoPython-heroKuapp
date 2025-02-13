@@ -9,7 +9,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 
 class JavaScriptAlertsPageLocators:
-    jsAlertBtn = (By.CSS_SELECTOR, "#content li:nth-child(1)>button")
+    jsAlertBtn = (By.XPATH, "//button[normalize-space()='Click for JS Alert']")
     jsConfirmBtn = (By.CSS_SELECTOR, "#content li:nth-child(2)>button")
     jsPromBtn = (By.CSS_SELECTOR, "#content li:nth-child(3)>button")
     msgResult = (By.CSS_SELECTOR, "#result")
@@ -24,8 +24,8 @@ class JavaScriptAlertsPage:
         aux = self.driver.find_element(*JavaScriptAlertsPageLocators.jsAlertBtn).click()
         time.sleep(2)
         self.driver.switch_to.alert().accept()
+        print("Timeout and No Alert Appearing")
 
-            print("Timeout and No Alert Appearing")
     def selectJsConfirmBtn(self):
         self.driver.find_element(*JavaScriptAlertsPageLocators.jsConfirmBtn).click()
         time.sleep(2)
