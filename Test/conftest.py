@@ -54,7 +54,7 @@ def pytest_runtest_makereport(item):
     extra = getattr(report, 'extra', [])
 
     if report.when == 'call' or report.when == 'setup':
-        extra.append(pytest_html.extras.url("https://practicesoftwaretesting.com/"))
+        extra.append(pytest_html.extras.url("https://the-internet.herokuapp.com/"))
         xfail = hasattr(report, 'wasxfail')
         if (report.skipped and xfail) or (report.failed and not xfail):
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")  # <-- ahora funciona
